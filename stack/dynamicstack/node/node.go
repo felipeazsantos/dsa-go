@@ -8,7 +8,7 @@ type MyNode struct {
 func NewNode() *MyNode {
 	return &MyNode{
 		element: 0,
-		next:    nil,
+		next:    &MyNode{},
 	}
 }
 
