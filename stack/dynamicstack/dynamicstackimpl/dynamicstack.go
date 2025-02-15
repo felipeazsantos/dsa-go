@@ -19,14 +19,8 @@ func NewDynamicStack() *dynamicStack {
 func (d *dynamicStack) Push(element int) {
 	newNode := node.NewNode()
 	newNode.SetElement(element)
-
-	if d.IsEmpty() {
-		d.topNode = newNode
-	} else {
-		auxNode := d.topNode
-		d.topNode = newNode
-		d.topNode.SetNext(auxNode)
-	}
+	newNode.SetNext(d.topNode)
+	d.topNode = newNode
 }
 
 func (d *dynamicStack) Pop() int {
